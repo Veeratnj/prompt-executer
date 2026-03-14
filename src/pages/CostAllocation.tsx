@@ -52,14 +52,6 @@ export default function CostAllocation() {
             dataKey="size"
             aspectRatio={4 / 3}
             stroke="hsl(var(--border))"
-            content={({ x, y, width, height, name, fill }) => (
-              <g>
-                <rect x={x} y={y} width={width} height={height} fill={fill as string} rx={4} opacity={0.85} />
-                {(width as number) > 60 && (height as number) > 30 && (
-                  <text x={(x as number) + 8} y={(y as number) + 20} fill="#fff" fontSize={11} fontWeight={600}>{name}</text>
-                )}
-              </g>
-            )}
           >
             <Tooltip formatter={(v: number) => formatCurrency(v)} contentStyle={{ background: "hsl(var(--card))", border: "1px solid hsl(var(--border))", borderRadius: 8, fontSize: 12 }} />
           </Treemap>
